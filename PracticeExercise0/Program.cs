@@ -102,7 +102,26 @@ namespace PracticeExcercise0
         // #4
         public static bool IsNeilNumber(int i)
         {
-            return true;
+            int sum = 0;
+            int tempNumber = i;
+            int temp = 0;
+            int length = i.ToString().Length;
+
+            while (i != 0)
+            {
+                temp = i % 10;
+                i = i / 10;
+                sum += (int)Math.Pow(temp, length);
+            }
+
+            if (sum == tempNumber)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }
